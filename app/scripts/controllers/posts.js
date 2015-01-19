@@ -1,12 +1,13 @@
 'use strict';
 
-app.controller('PostsCtrl', function ($scope, Post) {
+app.controller('PostsCtrl', function ($scope, $location, Post) {
   // $scope.posts = Post.get();
   $scope.posts = Post.all;
   $scope.post = {url: 'http://', title: ''};
 
   $scope.submitPost = function () {
     Post.create($scope.post).then(function () {
+      $location.path('/posts/' + ref.name());
       $scope.post = {url: 'http://', title: ''};
     });
     /*
