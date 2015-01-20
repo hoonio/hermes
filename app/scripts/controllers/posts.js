@@ -5,19 +5,15 @@ app.controller('PostsCtrl', function ($scope, $location, Post) {
   $scope.posts = Post.all;
   $scope.post = {url: 'http://', title: ''};
 
+/*
   $scope.submitPost = function () {
     Post.create($scope.post).then(function () {
       $location.path('/posts/' + ref.name());
       $scope.post = {url: 'http://', title: ''};
     });
-    /*
-    Post.save($scope.post, function (ref) {
-      $scope.posts[ref.name] = $scope.post;
-      $scope.post = {url: 'http://', title: ''};
-    });
-    */
     // $scope.posts.push($scope.post);
   };
+*/
 
   $scope.deletePost = function (postId) {
     Post.delete(post);
