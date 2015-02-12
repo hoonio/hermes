@@ -1,8 +1,9 @@
 'use strict';
 
-app.controller('PostsCtrl', function ($scope, $location, Post) {
+app.controller('PostsCtrl', function ($scope, $location, Post, Auth) {
   // $scope.posts = Post.get();
   $scope.posts = Post.all;
+  $scope.user = Auth.user;
   $scope.post = {url: 'http://', title: ''};
 
 /*
@@ -15,7 +16,7 @@ app.controller('PostsCtrl', function ($scope, $location, Post) {
   };
 */
 
-  $scope.deletePost = function (postId) {
+  $scope.deletePost = function (post) {
     Post.delete(post);
     /*
     Post.delete({id: postId}, function () {

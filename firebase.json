@@ -1,0 +1,10 @@
+{
+  "firebase": "hoonio-news",
+  "public": "dist",
+  "rules": "security-rules.json",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
